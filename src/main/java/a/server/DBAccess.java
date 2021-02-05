@@ -126,12 +126,27 @@ public class DBAccess {
     
     public void updateUnitati(String numeCarte, int unitati) throws SQLException{
         Statement s = conn.createStatement();
+        int unitatiAvailable = unitatiAvailable(numeCarte);
+        int unitati_update = unitatiAvailable - unitati;
         PreparedStatement prep = conn.prepareStatement("UPDATE BOOKS SET UNITATI = ? WHERE NAME = ?");
-        prep.setInt(1, unitati);
+        prep.setInt(1, unitati_update);
         prep.setString(2,numeCarte);
         prep.executeUpdate();
         
         s.close();
+    }
+    
+    public int unitatiAvailable(String numeCarte) throws SQLException{
+        int unitati = 0;
+        Statement s = conn.createStatement();
+        PreparedStatement prep = conn.prepareStatement("SELECT * FROM BOOKS WHERE NAME=?");
+        prep.setString(1, numeCarte);
+        ResultSet rs = prep.executeQuery();
+        while(rs.next()){
+            unitati = rs.getInt("UNITATI");
+        }
+        
+        return unitati;
     }
     
     
