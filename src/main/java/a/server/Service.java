@@ -40,6 +40,16 @@ public class Service {
                        
     }
     
+    public synchronized String addUnits(String name, int units) throws SQLException{
+        BooksEntity books = db.findBookByName(name);
+        if(books == null){
+            return "Doesn't exist!";
+        } else {
+            db.updateUnits(name, units);
+           return "Added!"; 
+           }
+    }
+    
     public synchronized int getAllBooks() throws SQLException{
         int all = db.cartiInInvetar();
         
@@ -57,10 +67,19 @@ public class Service {
     }
 
     public synchronized BooksEntity findBookByName(String name)throws SQLException{
-        return db.findBookByName(name);
+        if (db.findBookByName(name) == null){
+            return null;
+        } else {
+                return db.findBookByName(name);
+        }
     }
     
     public synchronized double insertVanzare(String numeCarte, int bucati, int discount, double pretVanzare, Date date)throws SQLException{
        return db.insertVanzare(numeCarte, bucati, discount, pretVanzare, date);
+    }
+    
+    public synchronized double getTotalVanzari()throws SQLException{
+        double totalVanzari = db.totalVanzari();
+        return totalVanzari;
     }
 }

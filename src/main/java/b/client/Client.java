@@ -29,6 +29,9 @@ public class Client extends javax.swing.JFrame {
         initComponents();
         bVanzare.setVisible(false);
         tReponseVanzareR.setVisible(false);
+        tTotalProfit.setVisible(false);
+        jLabel19.setVisible(false);
+        bAdaugareStoc.setVisible(false);
     }
 
     /**
@@ -80,6 +83,23 @@ public class Client extends javax.swing.JFrame {
         bVanzare = new javax.swing.JButton();
         bReset = new javax.swing.JButton();
         tReponseVanzareR = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tTotalIncasari = new javax.swing.JTextField();
+        tTotalProfit = new javax.swing.JTextField();
+        bClearVanzare = new javax.swing.JButton();
+        bClearAdd = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        tCarteStoc = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        tUnitatiDeAdaugat = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        tRaspunsStoc = new javax.swing.JTextField();
+        bAdaugareStoc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,93 +190,177 @@ public class Client extends javax.swing.JFrame {
             }
         });
 
+        jLabel18.setText("Total incasari:");
+
+        jLabel19.setText("Total profit:");
+
+        tTotalIncasari.setEditable(false);
+
+        tTotalProfit.setEditable(false);
+
+        bClearVanzare.setText("Clear");
+        bClearVanzare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bClearVanzareActionPerformed(evt);
+            }
+        });
+
+        bClearAdd.setText("Clear");
+        bClearAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bClearAddActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Suplimentare stoc");
+
+        jLabel21.setText("Carte:");
+
+        jButton2.setText("Verificare stoc");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Unitati de adaugat:");
+
+        tUnitatiDeAdaugat.setEditable(false);
+
+        jLabel23.setText("Raspuns:");
+
+        bAdaugareStoc.setText("Adaugare");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel6))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tName)
+                                    .addComponent(tAutor)
+                                    .addComponent(tPret)
+                                    .addComponent(tUnitati)
+                                    .addComponent(tRaspuns, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(bClearAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)))
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tName)
-                            .addComponent(jButton1)
-                            .addComponent(tAutor)
-                            .addComponent(tPret)
-                            .addComponent(tUnitati)
-                            .addComponent(tRaspuns, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(17, 17, 17)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(tCarteStoc, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tRaspunsStoc))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(16, 16, 16)
+                                .addComponent(bAdaugareStoc))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tUnitatiDeAdaugat, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tAutoriUnici)
-                                .addComponent(jLabel7)
-                                .addComponent(tCartiInInventar))
-                            .addComponent(tValoareTotala, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(149, 149, 149)
-                                        .addComponent(bStart))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(160, 160, 160)
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(bReset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(41, 41, 41)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel16))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(sDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(tPretVanzare)
-                                                    .addComponent(tSumaTotala, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                                    .addComponent(tNumeCarteVanzare))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(bDisponibilitate))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(sUnitatiDisponibile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(59, 59, 59)
-                                                .addComponent(jLabel17)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(tBucatiDisponibile, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)))))
-                                .addContainerGap(20, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bVanzare)
-                                .addGap(156, 156, 156))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tAutoriUnici)
+                                        .addComponent(jLabel7)
+                                        .addComponent(tCartiInInventar))
+                                    .addComponent(tValoareTotala, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tTotalIncasari, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                                    .addComponent(tTotalProfit)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(149, 149, 149)
+                                    .addComponent(bStart))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(160, 160, 160)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(41, 41, 41)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel14)
+                                                .addComponent(jLabel13)
+                                                .addComponent(jLabel15)
+                                                .addComponent(jLabel12)
+                                                .addComponent(jLabel16))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(sUnitatiDisponibile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(59, 59, 59)
+                                                    .addComponent(jLabel17)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(tBucatiDisponibile, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(bClearVanzare)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(sDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(tPretVanzare)
+                                                            .addComponent(tSumaTotala, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                                            .addComponent(tNumeCarteVanzare)))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(bDisponibilitate))))
+                                        .addComponent(bReset, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(bVanzare)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(tReponseVanzareR, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))))
@@ -286,12 +390,13 @@ public class Client extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(tUnitati, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(bClearAdd))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(tRaspuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(tRaspuns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(37, 37, 37)
@@ -302,11 +407,41 @@ public class Client extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(tAutoriUnici, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(tValoareTotala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(132, 132, 132))))
+                        .addGap(35, 35, 35)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(tTotalIncasari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(tTotalProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20)
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(tCarteStoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(tUnitatiDeAdaugat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(tRaspunsStoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(bAdaugareStoc))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(bStart)
@@ -339,12 +474,15 @@ public class Client extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(tSumaTotala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(bVanzare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tReponseVanzareR, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bVanzare)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tReponseVanzareR, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                    .addComponent(bClearVanzare))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bReset)
-                .addContainerGap())
+                .addGap(23, 23, 23))
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
@@ -352,13 +490,37 @@ public class Client extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
+            String verificare = tName.getText();
+            String pret = tPret.getText();
+            String autor = tAutor.getText();
+            String unitati = tUnitati.getText();
+            tName.setForeground(Color.black);
+            tPret.setForeground(Color.black);
+            tAutor.setForeground(Color.black);
+            tUnitati.setForeground(Color.black);
+            if (verificare.equals("")|| pret.equals("")|| autor.equals("")|| unitati.equals("")){
+                if(verificare.equals("")){
+                    tName.setText("Set name!");
+                    tName.setForeground(Color.red);
+                } 
+                if (pret.equals("")){
+                    tPret.setText("Set pret!");
+                    tPret.setForeground(Color.red);
+                }
+                if (autor.equals("")){
+                    tAutor.setText("Set autor!");
+                    tAutor.setForeground(Color.red);
+                }
+                if (unitati.equals("")){
+                    tUnitati.setText("Set unitati!");
+                    tUnitati.setForeground(Color.red);
+                }
+            } else {
+               try {
             s = new Socket("127.0.0.1", 4050);
             BufferedReader fluxIn = new BufferedReader(new InputStreamReader(s.getInputStream()));
             PrintWriter fluxOut = new PrintWriter(new OutputStreamWriter(s.getOutputStream()),true);
-            
-            
-                        
+                  
             fluxOut.println("Adaugare");
             fluxOut.println(tName.getText());
             fluxOut.println(tPret.getText());
@@ -369,10 +531,18 @@ public class Client extends javax.swing.JFrame {
             tCartiInInventar.setText(fluxIn.readLine());
             tAutoriUnici.setText(fluxIn.readLine());
             tValoareTotala.setText(fluxIn.readLine());
+            tTotalIncasari.setText(fluxIn.readLine());
+            
+            tName.setText("");
+            tPret.setText("");
+            tAutor.setText("");
+            tUnitati.setText("");
             s.close();
         } catch (IOException ex) {
                 Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
-        }              
+        }   
+            }
+                  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void bStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStartActionPerformed
@@ -385,6 +555,8 @@ public class Client extends javax.swing.JFrame {
             tCartiInInventar.setText(fluxIn.readLine());
             tAutoriUnici.setText(fluxIn.readLine());
             tValoareTotala.setText(fluxIn.readLine());
+            tTotalIncasari.setText(fluxIn.readLine());
+//            tTotalProfit.setText(fluxIn.readLine());
             s.close();
         } catch (IOException ex) {
                 Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
@@ -395,6 +567,7 @@ public class Client extends javax.swing.JFrame {
         try {
             
             String verificare = tNumeCarteVanzare.getText();
+            int raspuns_;
             if(verificare == null || verificare.equals("")){
                 tNumeCarteVanzare.setText("INSERT BOOK NAME!");
                 tNumeCarteVanzare.setForeground(Color.red);
@@ -406,11 +579,18 @@ public class Client extends javax.swing.JFrame {
             fluxOut.println("Verificare");    
             tNumeCarteVanzare.setForeground(Color.black);
             fluxOut.println(tNumeCarteVanzare.getText());
-            tBucatiDisponibile.setText(fluxIn.readLine());
-            sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,Integer.parseInt(tBucatiDisponibile.getText()),1));
-            tNumeCarteVanzare.setEditable(false);
-            bVanzare.setVisible(true);
+            raspuns_ = Integer.parseInt(fluxIn.readLine());
+            if(raspuns_ == 0){
+                tNumeCarteVanzare.setText("Book doesn't exist!");
+                tNumeCarteVanzare.setForeground(Color.red);
+            } else {
+                tBucatiDisponibile.setText(String.valueOf(raspuns_));
+                sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,Integer.parseInt(tBucatiDisponibile.getText()),1));
+                tNumeCarteVanzare.setEditable(false);
+                bVanzare.setVisible(true);
                 s.close();
+                }
+            
             }
             
             
@@ -439,6 +619,13 @@ public class Client extends javax.swing.JFrame {
             tCartiInInventar.setText(fluxIn.readLine());
             tAutoriUnici.setText(fluxIn.readLine());
             tValoareTotala.setText(fluxIn.readLine());
+            tTotalIncasari.setText(fluxIn.readLine()); 
+            
+            tNumeCarteVanzare.setText("");
+            tBucatiDisponibile.setText("");
+            sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,100,1));
+            tPretVanzare.setText("");
+            sDiscount.setModel(new SpinnerNumberModel(0,0,100,1));
             s.close();
         } catch (IOException ex) {
                 Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
@@ -446,7 +633,30 @@ public class Client extends javax.swing.JFrame {
     }//GEN-LAST:event_bVanzareActionPerformed
 
     private void bResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetActionPerformed
-        if (s.isConnected()){
+        if (s == null){
+                sDiscount.setModel(new SpinnerNumberModel(0,0,100,5));
+                sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,100,5));
+                tAutor.setText("");
+                tAutoriUnici.setText("");
+                tBucatiDisponibile.setText("");
+                tCartiInInventar.setText("");
+                tName.setText("");
+                tNumeCarteVanzare.setText("");
+                tPret.setText("");
+                tPretVanzare.setText("");
+                tRaspuns.setText("");
+                tSumaTotala.setText("");
+                tUnitati.setText("");
+                tValoareTotala.setText("");
+                tNumeCarteVanzare.setEditable(true);
+                bVanzare.setVisible(false);
+                tReponseVanzareR.setVisible(false);
+                tReponseVanzareR.setForeground(Color.black);
+                tReponseVanzareR.setText("");
+                tTotalIncasari.setText("");
+                tTotalProfit.setText("");
+        }
+        else if (s.isConnected()){
             try{
                 s.close();
                 sDiscount.setModel(new SpinnerNumberModel(0,0,100,5));
@@ -468,12 +678,110 @@ public class Client extends javax.swing.JFrame {
                 tReponseVanzareR.setVisible(false);
                 tReponseVanzareR.setForeground(Color.black);
                 tReponseVanzareR.setText("");
+                tTotalIncasari.setText("");
+                tTotalProfit.setText("");
+            } catch (IOException ex) {
+                Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+            
+                    }
+    }//GEN-LAST:event_bResetActionPerformed
+
+    private void bClearVanzareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClearVanzareActionPerformed
+        if (s == null){
+                sDiscount.setModel(new SpinnerNumberModel(0,0,100,5));
+                sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,100,5));
+                tBucatiDisponibile.setText("");
+                tNumeCarteVanzare.setText("");
+                tPretVanzare.setText("");
+                tSumaTotala.setText("");
+                tNumeCarteVanzare.setEditable(true);
+                bVanzare.setVisible(false);
+                tReponseVanzareR.setVisible(false);
+                tReponseVanzareR.setForeground(Color.black);
+                tReponseVanzareR.setText("");
+        }
+        else if (s.isConnected()){
+            try{
+                s.close();
+                sDiscount.setModel(new SpinnerNumberModel(0,0,100,5));
+                sUnitatiDisponibile.setModel(new SpinnerNumberModel(0,0,100,5));
+                tBucatiDisponibile.setText("");
+                tNumeCarteVanzare.setText("");
+                tPretVanzare.setText("");
+                tSumaTotala.setText("");
+                tNumeCarteVanzare.setEditable(true);
+                bVanzare.setVisible(false);
+                tReponseVanzareR.setVisible(false);
+                tReponseVanzareR.setForeground(Color.black);
+                tReponseVanzareR.setText("");
             } catch (IOException ex) {
                 Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         } 
             
         }
-    }//GEN-LAST:event_bResetActionPerformed
+    }//GEN-LAST:event_bClearVanzareActionPerformed
+
+    private void bClearAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClearAddActionPerformed
+        
+        if (s == null){
+            tName.setText("");
+            tPret.setText("");
+            tAutor.setText("");
+            tUnitati.setText("");
+            tRaspuns.setText("");
+        } else if(s.isConnected()){
+            try{
+            s.close();
+            tName.setText("");
+            tPret.setText("");
+            tAutor.setText("");
+            tUnitati.setText("");
+            tRaspuns.setText("");
+            } catch (IOException ex) {
+                Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+       
+    }//GEN-LAST:event_bClearAddActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            
+            String verificare = tCarteStoc.getText();
+            int raspuns_;
+            if(verificare == null || verificare.equals("")){
+                tCarteStoc.setText("INSERT BOOK NAME!");
+                tCarteStoc.setForeground(Color.red);
+            } else {
+            s = new Socket("127.0.0.1", 4050);
+            BufferedReader fluxIn = new BufferedReader(new InputStreamReader(s.getInputStream()));
+            PrintWriter fluxOut = new PrintWriter(new OutputStreamWriter(s.getOutputStream()),true);           
+            
+            fluxOut.println("Verificare stoc");    
+            tCarteStoc.setForeground(Color.black);
+            fluxOut.println(tCarteStoc.getText());
+            raspuns_ = Integer.parseInt(fluxIn.readLine());
+            if(raspuns_ == 0){
+                tRaspunsStoc.setText("Book doesn't exist!");
+                tRaspunsStoc.setForeground(Color.red);
+
+            } else {
+                tCarteStoc.setEditable(false);
+                tRaspunsStoc.setText("Exist!");
+                bAdaugareStoc.setVisible(true);
+                tRaspunsStoc.setText(fluxIn.readLine());
+                s.close();
+                }
+            
+            }
+            
+            
+        } catch (IOException ex) {
+                Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,11 +820,15 @@ public class Client extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAdaugareStoc;
+    private javax.swing.JButton bClearAdd;
+    private javax.swing.JButton bClearVanzare;
     private javax.swing.JButton bDisponibilitate;
     private javax.swing.JButton bReset;
     private javax.swing.JButton bStart;
     private javax.swing.JButton bVanzare;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -526,7 +838,13 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -537,20 +855,27 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSpinner sDiscount;
     private javax.swing.JSpinner sUnitatiDisponibile;
     private javax.swing.JTextField tAutor;
     private javax.swing.JTextField tAutoriUnici;
     private javax.swing.JTextField tBucatiDisponibile;
+    private javax.swing.JTextField tCarteStoc;
     private javax.swing.JTextField tCartiInInventar;
     private javax.swing.JTextField tName;
     private javax.swing.JTextField tNumeCarteVanzare;
     private javax.swing.JTextField tPret;
     private javax.swing.JTextField tPretVanzare;
     private javax.swing.JTextField tRaspuns;
+    private javax.swing.JTextField tRaspunsStoc;
     private javax.swing.JLabel tReponseVanzareR;
     private javax.swing.JTextField tSumaTotala;
+    private javax.swing.JTextField tTotalIncasari;
+    private javax.swing.JTextField tTotalProfit;
     private javax.swing.JTextField tUnitati;
+    private javax.swing.JTextField tUnitatiDeAdaugat;
     private javax.swing.JTextField tValoareTotala;
     // End of variables declaration//GEN-END:variables
 }

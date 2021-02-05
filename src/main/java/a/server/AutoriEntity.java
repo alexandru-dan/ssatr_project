@@ -5,6 +5,8 @@
  */
 package a.server;
 
+import java.util.Objects;
+
 /**
  *
  * @author Alexandru
@@ -17,6 +19,30 @@ public class AutoriEntity {
     }
     public AutoriEntity(String name){
         this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final AutoriEntity other = (AutoriEntity) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
     }
 
     @Override

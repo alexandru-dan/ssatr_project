@@ -5,6 +5,8 @@
  */
 package a.server;
 
+import java.util.Objects;
+
 /**
  *
  * @author Alexandru
@@ -20,6 +22,31 @@ public class BooksEntity {
         this.price = price;
         this.autor = autor;
         this.unitati = unitati;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.name);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final BooksEntity other = (BooksEntity) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
     }
 
     public void setUnitati(int unitati) {

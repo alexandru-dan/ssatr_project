@@ -44,6 +44,8 @@ public class NetConnector {
                 fluxOut.println(service.getAllBooks());
                 fluxOut.println(service.getAllAuthors());
                 fluxOut.println(service.getTotalSum());
+                fluxOut.println(service.getTotalVanzari());
+//                fluxOut.println(service.getTotalProfit());
                 }
                                               
                 else if(actiune.equals("Adaugare")){
@@ -58,11 +60,19 @@ public class NetConnector {
                 fluxOut.println(service.getAllBooks());
                 fluxOut.println(service.getAllAuthors());
                 fluxOut.println(service.getTotalSum());
+                fluxOut.println(service.getTotalVanzari());
                 
                 } else if(actiune.equals("Verificare")){
                   String numeCarte = fluxIn.readLine();
-                  int result = service.findBookByName(numeCarte).getUnitati();
-                  fluxOut.println(result);
+                  BooksEntity x = service.findBookByName(numeCarte);
+                  if (x != null){
+                    int result = service.findBookByName(numeCarte).getUnitati();
+                    fluxOut.println(result);
+                  }
+                  else {
+                      fluxOut.println(0);
+                  }
+                  
                   
                 } else if(actiune.equals("Vanzare")){
                   String numeCarte = fluxIn.readLine();
@@ -76,8 +86,25 @@ public class NetConnector {
                   fluxOut.println(service.getAllBooks());
                   fluxOut.println(service.getAllAuthors());
                   fluxOut.println(service.getTotalSum());
+                  fluxOut.println(service.getTotalVanzari());
                   
-                }
+                } else if(actiune.equals("Verificare stoc")) {
+                  String numeCarte = fluxIn.readLine();
+                  BooksEntity x = service.findBookByName(numeCarte);
+                  if (x != null){
+                    int result = service.findBookByName(numeCarte).getUnitati();
+                    fluxOut.println(1);
+                  }
+                  else {
+                      fluxOut.println(0);
+                  } 
+                } else if(actiune.equals("Adaugare stoc")){
+                        String numeCarte = fluxIn.readLine();
+                        int unitatiDeAdaugat = Integer.parseInt(fluxIn.readLine());
+                        String result = service.addUnits(numeCarte, unitatiDeAdaugat);
+                        fluxOut.println(result);
+                        
+                  }
                 
                 
                 s.close();

@@ -48,6 +48,18 @@ public class DBAccess {
         s.close();
     }
     
+    public void updateUnits(String numeCarte, int unitati) throws SQLException{
+        Statement s = conn.createStatement();
+        PreparedStatement prep = conn.prepareStatement("UPDATE BOOKS SET UNITATI = ? WHERE NAME = ?");
+        int unitatiAvailable = unitatiAvailable(numeCarte);
+        int unitatiDeAdaugat = unitatiAvailable + unitati;
+        prep.setInt(1, unitatiDeAdaugat);
+        prep.setString(2,numeCarte);
+        prep.executeUpdate();
+        
+        s.close();
+    }
+    
     public double insertVanzare(String numeCarte, int bucati, int discount, double pretVanzare, Date date_) throws SQLException{
         Statement s = conn.createStatement();
         double pretVanzare_;
@@ -147,6 +159,18 @@ public class DBAccess {
         }
         
         return unitati;
+    }
+    
+    public double totalVanzari() throws SQLException{
+        Statement s = conn.createStatement();
+        ResultSet rs = s.executeQuery("Select * from VANZARI");
+        int totalSum = 0;
+        while (rs.next()){
+            double vanzari = rs.getDouble("VANZARI");
+            
+            totalSum += vanzari;
+        }
+        return totalSum;
     }
     
     
